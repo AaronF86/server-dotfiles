@@ -7,7 +7,6 @@
   };
 
   outputs = { self, nixpkgs, ... }:
-
     let
       system = "x86_64-linux";
     in
@@ -16,8 +15,9 @@
         system = system;
         modules = [
           ./configuration.nix
-          nixpkgs.nixosModules.virtualisation
+          ./hardware-configuration.nix
         ];
       };
     };
 }
+
